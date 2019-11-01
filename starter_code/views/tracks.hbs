@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row header-row">
+        <span class="col-lg-8">Title</span>
+        <span class="col-lg-4">Listen</span>
+    </div>
+    {{#each this}}
+        <div class="row track-item">
+            <div class="col-lg-8">
+                {{#if this.name}}
+                    <p>{{this.name}}</p>
+                {{else}}
+                    <p>Unknown Title</p>
+                {{/if}}
+            </div>
+            <div class="col-lg-4">
+                {{#if this.preview_url}}
+                    <audio controls="" name="media"><source src="{{this.preview_url}}" type="audio/mpeg"></audio>
+                {{else}}
+                    <span>Sorry, there is no preview url for this track</span>
+                {{/if}}
+            </div>
+        </div>
+    {{/each}}
+    
+</div>
